@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title Redis JSON Display
+    meta(charset="utf-8")
+    | <style type="text/css">
+    include main.css
+    | </style>
+  body
+    table
+      caption Outstanding Debtors to BankTywin, Ranked by Amount Owed
+        tr
+          th Debtor Name 1
+          th Gold Pieces Owed 2
+          th Status 3
+          if balances.length
+            each balance in balances
+              if balance
+                tr
+                  td #{balance.first_name} #{balance.last_name}
+                  td #{balance.balance}
+                  td #{balance.status}
